@@ -15,9 +15,9 @@ client.on('ready', () => {
 
 client.on('messageCreate', (message) => {
     if (message.author.bot) return
-    if (message.content == 'hi' || 'hello') {
+    if (message.content == 'ping') {
         message.reply({
-            content: 'Hello!!!!',
+            content: 'pong',
         })
     }
 })

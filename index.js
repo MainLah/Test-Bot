@@ -37,9 +37,9 @@ client.on('ready', function () {
 client.on('messageCreate', function (message) {
     if (message.author.bot)
         return;
-    if (message.content == 'hi' || 'hello') {
+    if (message.content == 'ping') {
         message.reply({
-            content: 'Hello!!!!',
+            content: 'pong',
         });
     }
 });

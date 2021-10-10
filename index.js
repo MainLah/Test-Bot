@@ -35,7 +35,7 @@ client.on('ready', function () {
     console.log('The bot is ready');
 });
 client.on('messageCreate', function (message) {
-    if (message.author.bot)
+    if (message.author.client)
         return;
     if (message.content === 'hi' || 'hello') {
         message.reply({

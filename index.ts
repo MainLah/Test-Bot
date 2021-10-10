@@ -17,7 +17,7 @@ client.on('messageCreate', (message) => {
     if (message.author.bot) return
     if (message.content === 'hi' || 'hello') {
         message.reply({
-            content: 'Hello!',
+            content: 'Hello!!!!',
         })
     }
 })

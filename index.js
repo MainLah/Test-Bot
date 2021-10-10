@@ -39,7 +39,7 @@ client.on('messageCreate', function (message) {
         return;
     if (message.content === 'hi' || 'hello') {
         message.reply({
-            content: 'Hello!',
+            content: 'Hello!!!!',
         });
     }
 });

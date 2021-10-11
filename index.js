@@ -37,7 +37,7 @@ client.on('ready', function () {
 client.on('messageCreate', function (message) {
     if (message.author.bot)
         return;
-    if (message.content == 'hi' || message.content == 'hello') {
+    if (message.content == 'hi' || message.content == 'hello' || message.content == 'Hi' || message.content == 'Hello') {
         message.reply({
             content: 'Hello!!!',
         });

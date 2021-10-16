@@ -23,24 +23,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var discord_js_1 = __importStar(require("discord.js"));
+var wokcommands_1 = __importDefault(require("wokcommands"));
+var path_1 = __importDefault(require("path"));
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 var client = new discord_js_1.default.Client({
     intents: [
         discord_js_1.Intents.FLAGS.GUILDS,
-        discord_js_1.Intents.FLAGS.GUILD_MESSAGES
+        discord_js_1.Intents.FLAGS.GUILD_MESSAGES,
+        discord_js_1.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
     ]
 });
 client.on('ready', function () {
     console.log('The bot is ready');
-});
-client.on('messageCreate', function (message) {
-    if (message.author.bot)
-        return;
-    if (message.content == 'hi' || message.content == 'hello' || message.content == 'Hi' || message.content == 'Hello') {
-        message.reply({
-            content: 'Hello!!!',
-        });
-    }
+    new wokcommands_1.default(client, {
+        commandsDir: path_1.default.join(__dirname, 'commands'),
+        typeScript: true,
+        testServers: ['748300659442319411', '754696179375276032'],
+    })
+        .setCategorySettings([
+        {
+            name: 'Fun',
+            emoji: '🎮'
+        },
+        {
+            name: 'Math',
+            emoji: '🧮'
+        },
+        {
+            name: 'Testing',
+            emoji: '🔧'
+        }
+    ]);
 });
 client.login(process.env.TOKEN);

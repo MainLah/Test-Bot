@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var discord_js_1 = require("discord.js");
+var wokcommands_1 = require("wokcommands");
 exports.default = {
     category: 'Testing',
     description: 'Sends an embed. Uses raw JSON format.',
@@ -53,5 +54,24 @@ exports.default = {
                 return [2 /*return*/, embed];
             });
         });
+    },
+    error: function (_a) {
+        var error = _a.error, command = _a.command, message = _a.message, info = _a.info;
+        if (error === wokcommands_1.CommandErrors.COMMAND_DISABLED) {
+            var embed = new discord_js_1.MessageEmbed()
+                .setTitle('Command disabled')
+                .setColor(0xff0000);
+            message.reply({
+                embeds: [embed]
+            });
+        }
+        if (error === wokcommands_1.CommandErrors.MISSING_PERMISSIONS) {
+            var embed = new discord_js_1.MessageEmbed()
+                .setTitle("You don't have permission to run this command!")
+                .setColor(0xff0000);
+            message.reply({
+                embeds: [embed]
+            });
+        }
     }
 };

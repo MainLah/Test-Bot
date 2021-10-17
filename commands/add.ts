@@ -1,4 +1,5 @@
-import { ICommand } from "wokcommands";
+import { MessageEmbed } from "discord.js";
+import { CommandErrors, ICommand } from "wokcommands";
 
 export default {
     category: 'Math',
@@ -26,5 +27,27 @@ export default {
         const sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10;
         //Reply with sum
         return `The sum is ${sum}`
+    },
+    error: ({ error, command, message, info}) => {
+        if (error === CommandErrors.COMMAND_DISABLED) {
+            const embed = new MessageEmbed()        
+            .setTitle('Command disabled')        
+            .setColor(0xff0000)      
+            
+            message.reply({        
+                embeds: [embed] 
+            })
+        }
+        
+        if (error === CommandErrors.INVALID_ARGUMENTS) {
+            const embed = new MessageEmbed()
+            .setTitle('Invalid Arguments!')
+            .addField('Please use the correct format as follows:', '>add <num1> <num2> [num3] [num4] ...')
+            .setColor(0xff0000)
+
+            message.reply({
+                embeds: [embed]
+            })
+        }
     }
 } as ICommand

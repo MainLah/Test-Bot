@@ -1,5 +1,5 @@
 import { MessageEmbed } from "discord.js";
-import { ICommand } from "wokcommands";
+import { CommandErrors, ICommand } from "wokcommands";
 
 export default {
     category: 'Fun',
@@ -19,4 +19,16 @@ export default {
 
         return embed
     },
+
+    error: ({ error, command, message, info}) => {
+        if (error === CommandErrors.COMMAND_DISABLED) {
+            const embed = new MessageEmbed()        
+            .setTitle('Command disabled')        
+            .setColor(0xff0000)      
+            
+            message.reply({        
+                embeds: [embed] 
+            })
+        }
+    }
 } as ICommand

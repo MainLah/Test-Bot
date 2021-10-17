@@ -1,5 +1,5 @@
 import { MessageEmbed } from "discord.js";
-import { ICommand } from "wokcommands";
+import { CommandErrors, ICommand } from "wokcommands";
 
 export default {
     category: 'Testing',
@@ -16,5 +16,27 @@ export default {
         const embed = new MessageEmbed(json)
         
         return embed
+    },
+
+    error: ({ error, command, message, info}) => {
+        if (error === CommandErrors.COMMAND_DISABLED) {
+            const embed = new MessageEmbed()        
+            .setTitle('Command disabled')        
+            .setColor(0xff0000)      
+            
+            message.reply({        
+                embeds: [embed] 
+            })
+        }
+
+        if (error === CommandErrors.MISSING_PERMISSIONS) {
+            const embed = new MessageEmbed()        
+            .setTitle("You don't have permission to run this command!")        
+            .setColor(0xff0000)      
+            
+            message.reply({        
+                embeds: [embed] 
+            })
+        }
     }
 } as ICommand

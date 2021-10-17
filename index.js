@@ -41,6 +41,8 @@ client.on('ready', function () {
         typeScript: true,
         testServers: ['748300659442319411', '754696179375276032'],
     })
+        .setDefaultPrefix('>')
+        .setDisplayName('Cockinator')
         .setCategorySettings([
         {
             name: 'Fun',

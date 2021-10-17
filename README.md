@@ -4,7 +4,7 @@ This is being worked on 3 or 4 times a week, so there will be occasional feature
 ### Commands
 **The default prefix for Cockinator is '^'.**
 
-**_In the future all commands will also be have slash command handling._**
+**_In the future all commands will also have slash command handling._**
 
 #### Currently there are only 6 commands:
 ### 1. Fun Commands

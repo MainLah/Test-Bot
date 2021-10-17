@@ -20,7 +20,7 @@ client.on('ready', () => {
         typeScript: true,
         testServers: ['748300659442319411'],
     })
-    .setDefaultPrefix('>')
+    .setDefaultPrefix('^')
     .setDisplayName('Cockinator')
     .setCategorySettings([
         {

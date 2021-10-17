@@ -5,7 +5,7 @@ export default {
     category: 'Fun',
     description: 'Determine your Simprate',
 
-    slash: 'both',
+    slash: false,
     testOnly: true,
 
     callback: ({}) => {

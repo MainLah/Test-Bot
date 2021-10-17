@@ -5,7 +5,7 @@ export default {
     category: 'Testing',
     description: 'Sends an embed. Uses raw JSON format.',
 
-    slash: 'both',
+    slash: false,
     testOnly: true,
 
     permissions: ['ADMINISTRATOR'],

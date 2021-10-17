@@ -5,12 +5,13 @@ export default {
     category: 'Math',
     description: 'Add up to 10 numbers together.',
 
-    slash: 'both',
+    slash: false,
     testOnly: true,
     
     expectedArgs: '<num1> <num2> [num3] [num4] [num5] [num6] [num7] [num8] [num9] [num10]',
     minArgs: 2,
     maxArgs: 10,
+
     callback: ({ channel, args }) => {
         // Get numbers to add
         const num1 = parseInt(args[0])

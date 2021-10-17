@@ -5,7 +5,7 @@ export default {
     category: 'Fun',
     description: 'Determine your Gayrate',
 
-    slash: 'both',
+    slash: false,
     testOnly: true,
 
     callback: ({}) => {

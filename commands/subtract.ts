@@ -5,7 +5,7 @@ export default {
     category: 'Math',
     description: 'Subtract up to 10 numbers.',
 
-    slash: 'both',
+    slash: false,
     testOnly: true,
     
     expectedArgs: '<num1> <num2> [num3] [num4] [num5] [num6] [num7] [num8] [num9] [num10]',

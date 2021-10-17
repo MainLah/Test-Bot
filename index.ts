@@ -18,8 +18,10 @@ client.on('ready', () => {
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'commands'),
         typeScript: true,
-        testServers: ['748300659442319411', '754696179375276032'],  
+        testServers: ['748300659442319411', '754696179375276032'],
     })
+    .setDefaultPrefix('>')
+    .setDisplayName('Cockinator')
     .setCategorySettings([
         {
             name: 'Fun',

@@ -11,16 +11,20 @@ This is being worked on 3 or 4 times a week, so there will be occasional feature
    - **Simprate**: Determines the user's simp levels.
    
      Usage: _>simprate_
+     
    - **Gayrate**: Determines the user's gay levels.
    
      Usage: _>gayrate_
+     
 ### 2. Math Commands
    - **Add**: Finds the sum of two numbers. Can add a maximum of 10 numbers.
    
      Usage: _>add \<num1> \<num2> [num3] ... [num10]_
+     
    - **Subtract**: Finds the difference of two numbers. Can subtract a maximum of 10 numbers.
    
      Usage: _>subtract \<num1> \<num2> [num3] ... [num10]_
+     
 ### 3. Testing Commands
    - **Embed**: Sends an embed using raw json data.
    

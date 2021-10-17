@@ -8,7 +8,7 @@ export default {
     slash: false,
     testOnly: true,
     
-    expectedArgs: '<num1> <num2> [num3] [num4] [num5] [num6] [num7] [num8] [num9] [num10]',
+    expectedArgs: '<num1> <num2> [num3] ... [num10]',
     minArgs: 2,
     maxArgs: 10,
 
@@ -43,7 +43,7 @@ export default {
         if (error === CommandErrors.INVALID_ARGUMENTS) {
             const embed = new MessageEmbed()
             .setTitle('Invalid Arguments!')
-            .addField('Please use the correct format as follows:', '>add <num1> <num2> [num3] [num4] ...')
+            .addField('Please use the correct format as follows:', '>add <num1> <num2> [num3] ... [num10]')
             .setColor(0xff0000)
 
             message.reply({

@@ -8,6 +8,12 @@ export default {
     slash: false,
     testOnly: true,
 
+    expectedArgs: '<json>',
+    minArgs: 1,
+    maxArgs: -1,
+    syntax: '{PREFIX}embed {ARGUMENTS}',
+    syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}embed {ARGUMENTS}`'},
+
     permissions: ['ADMINISTRATOR'],
 
     callback: async ({ message, text }) => {
@@ -17,26 +23,4 @@ export default {
         
         return embed
     },
-
-    error: ({ error, command, message, info}) => {
-        if (error === CommandErrors.COMMAND_DISABLED) {
-            const embed = new MessageEmbed()        
-            .setTitle('Command disabled')        
-            .setColor(0xff0000)      
-            
-            message.reply({        
-                embeds: [embed] 
-            })
-        }
-
-        if (error === CommandErrors.MISSING_PERMISSIONS) {
-            const embed = new MessageEmbed()        
-            .setTitle("You don't have permission to run this command!")        
-            .setColor(0xff0000)      
-            
-            message.reply({        
-                embeds: [embed] 
-            })
-        }
-    }
 } as ICommand

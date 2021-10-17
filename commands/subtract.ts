@@ -11,6 +11,7 @@ export default {
     expectedArgs: '<num1> <num2> [num3] ... [num10]',
     minArgs: 2,
     maxArgs: 10,
+    syntaxError: {['Incorrect Usage!']: 'Please use *{PREFIX}subtract {ARGUMENTS}*'},
 
     callback: ({channel, args}) => {
         const num1 = parseInt(args[0])
@@ -29,27 +30,4 @@ export default {
         return `The difference is ${diff}`
 
     },
-
-    error: ({ error, command, message, info}) => {
-        if (error === CommandErrors.COMMAND_DISABLED) {
-            const embed = new MessageEmbed()        
-            .setTitle('Command disabled')        
-            .setColor(0xff0000)      
-            
-            message.reply({        
-                embeds: [embed] 
-            })
-        }
-        
-        if (error === CommandErrors.INVALID_ARGUMENTS) {
-            const embed = new MessageEmbed()
-            .setTitle('Invalid Arguments!')
-            .addField('Please use the correct format as follows:', '>subtract <num1> <num2> [num3] ... [num10]')
-            .setColor(0xff0000)
-
-            message.reply({
-                embeds: [embed]
-            })
-        }
-    }
 } as ICommand

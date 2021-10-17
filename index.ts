@@ -13,7 +13,9 @@ const client = new DiscordJS.Client({
 })
 
 client.on('ready', () => {
-    console.log('The bot is ready')
+    console.log(`Logged in as ${client.user?.tag}!`)
+
+    client.user?.setActivity('^help', {type: 'LISTENING'})
 
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'commands'),

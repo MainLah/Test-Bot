@@ -14,10 +14,10 @@ export default {
 
     callback: ({ channel, args }) => {
         let quotient = parseInt(args[0])
-        args.forEach(element, index => {
-            if (index < 1) return
-          quotient /= parseInt(element)
-        });
+        for (let index = 1; index < args.length - 2; index++) {
+            const element = parseInt(args[index]);
+            quotient /= element   
+        }
         //Reply with quotient
         return `The quotient is ${quotient}`
     },

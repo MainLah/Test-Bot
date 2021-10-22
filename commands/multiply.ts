@@ -13,10 +13,11 @@ export default {
     syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}multiply {ARGUMENTS}`'},
 
     callback: ({ channel, args }) => {
-        let product = 1
-        args.forEach(element => {
-          product *= parseInt(element)
-        });
+      let product = parseInt(args[0])
+      for (let index = 1; index < args.length - 2; index++) {
+          const element = parseInt(args[index]);
+          product *= element
+      }
         //Reply with product
         return `The product is ${product}`
     },

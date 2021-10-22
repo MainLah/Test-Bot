@@ -8,7 +8,7 @@ export default {
     slash: false,
     testOnly: true,
     
-    expectedArgs: '<num1> <num2> [num3] ... [num10]',
+    expectedArgs: '<num1> <num2> [num3] ... [num100]',
     minArgs: 2,
     maxArgs: 100,
     syntaxError: {['Incorrect Usage!']: 'Please use *{PREFIX}subtract {ARGUMENTS}*'},

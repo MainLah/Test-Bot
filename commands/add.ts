@@ -18,7 +18,7 @@ export default {
         // Get numbers to add
         args.forEach(element => {
             // Add numbers
-            sum += element
+            sum += parseInt(element)
         });
         //Reply with sum
         return `The sum is ${sum}`

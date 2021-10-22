@@ -2,14 +2,14 @@ import { ICommand } from "wokcommands";
 
 export default {
     category: 'Math',
-    description: 'Add up to 10 numbers together.',
+    description: 'Add up to 100 numbers together.',
 
     slash: false,
     testOnly: true,
     
     expectedArgs: '<num1> <num2> [num3] ... [num10]',
     minArgs: 2,
-    maxArgs: 10,
+    maxArgs: 100,
     syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}add {ARGUMENTS}`'},
 
     callback: ({ channel, args }) => {

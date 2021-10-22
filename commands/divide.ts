@@ -13,7 +13,7 @@ export default {
     syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}divide {ARGUMENTS}`'},
 
     callback: ({ channel, args }) => {
-        let quotient = args[0]
+        let quotient = parseInt(args[0])
         args.forEach(element, index => {
             if (index < 1) return
           quotient /= parseInt(element)

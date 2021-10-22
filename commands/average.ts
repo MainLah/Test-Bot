@@ -13,11 +13,12 @@ export default {
     syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}add {ARGUMENTS}`'},
 
     callback: ({ channel, args }) => {
-        let sum = 0
-        args.forEach(element => {
-            sum += parseInt(element)
-        });
-        const average = sum / (args.length - 1)
+        let sum = parseInt(args[0])
+        for (let index = 1; index < args.length; index++) {
+            const element = parseInt(args[index]);
+            sum += element
+        }
+        const average = sum / (args.length)
         //Reply with sum
         return `The average is ${average}`
     },

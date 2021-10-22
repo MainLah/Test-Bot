@@ -14,10 +14,11 @@ export default {
     syntaxError: {['Incorrect Usage!']: 'Please use *{PREFIX}subtract {ARGUMENTS}*'},
 
     callback: ({channel, args}) => {
-        let diff = 0
-        args.forEach(element => {
-          diff -= parseInt(element)
-        });
+      let diff = parseInt(args[0])
+      for (let index = 1; index < args.length; index++) {
+          const element = parseInt(args[index]);
+          diff -= element
+      }
 
         return `The difference is ${diff}`
 

@@ -13,7 +13,7 @@ export default {
     syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}add {ARGUMENTS}`'},
 
     callback: ({ channel, args }) => {
-        // Get numbers to add
+        // Get numbers
         const num1 = parseInt(args[0])
         const num2 = parseInt(args[1])
         const num3 = parseInt(args[2]) || 0

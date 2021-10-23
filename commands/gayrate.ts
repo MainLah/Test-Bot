@@ -2,6 +2,7 @@ import { MessageEmbed } from "discord.js";
 import { CommandErrors, ICommand } from "wokcommands";
 
 export default {
+    aliases: ['gr'],
     category: 'Fun',
     description: 'Determine your Gayrate',
 

@@ -1,6 +1,7 @@
 import { ICommand } from "wokcommands";
 
 export default {
+    aliases: ['mul', 'product'],
     category: 'Math',
     description: 'Multiply up to 100 numbers together.',
 

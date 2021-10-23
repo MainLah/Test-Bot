@@ -1,6 +1,7 @@
 import { ICommand } from "wokcommands";
 
 export default {
+    aliases: ['div', 'quotient'],
     category: 'Math',
     description: 'Divide up to 100 numbers together.',
 

@@ -1,6 +1,7 @@
 import { ICommand } from "wokcommands";
 
 export default {
+    aliases: ['av'],
     category: 'Math',
     description: 'Find the average of up to 100 numbers.',
 

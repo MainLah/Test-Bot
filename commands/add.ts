@@ -1,6 +1,7 @@
 import { ICommand } from "wokcommands";
 
 export default {
+    aliases: ['plus', 'sum'],
     category: 'Math',
     description: 'Add up to 100 numbers together.',
 

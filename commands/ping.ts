@@ -8,18 +8,18 @@ export default {
     slash: false,
     testOnly: true,
 
-    callback: ({}) => {
+    callback: ({ }) => {
         return 'Pong'
     },
 
-    error: ({ error, command, message, info}) => {
+    error: ({ error, command, message, info }) => {
         if (error === CommandErrors.COMMAND_DISABLED) {
-            const embed = new MessageEmbed()        
-            .setTitle('Command disabled')        
-            .setColor(0xff0000)      
-            
-            message.reply({        
-                embeds: [embed] 
+            const embed = new MessageEmbed()
+                .setTitle('Command disabled')
+                .setColor(0xff0000)
+
+            message.reply({
+                embeds: [embed]
             })
         }
     }

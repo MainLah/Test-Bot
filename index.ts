@@ -15,29 +15,29 @@ const client = new DiscordJS.Client({
 client.on('ready', () => {
     console.log(`Logged in as ${client.user?.tag}!`)
 
-    client.user?.setActivity('^help', {type: 'LISTENING'})
+    client.user?.setActivity('^help', { type: 'LISTENING' })
 
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'commands'),
         typeScript: true,
         testServers: ['748300659442319411', '754696179375276032'],
     })
-    .setDefaultPrefix('^')
-    .setDisplayName('Cockinator')
-    .setCategorySettings([
-        {
-            name: 'Fun',
-            emoji: '🎮'
-        },
-        {
-            name: 'Math',
-            emoji: '🧮'
-        },
-        {
-            name: 'Testing',
-            emoji: '🔧'
-        }
-    ])
+        .setDefaultPrefix('^')
+        .setDisplayName('Cockinator')
+        .setCategorySettings([
+            {
+                name: 'Fun',
+                emoji: '🎮'
+            },
+            {
+                name: 'Math',
+                emoji: '🧮'
+            },
+            {
+                name: 'Testing',
+                emoji: '🔧'
+            }
+        ])
 })
 
 

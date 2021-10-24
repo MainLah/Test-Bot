@@ -12,7 +12,7 @@ export default {
     minArgs: 1,
     maxArgs: -1,
     syntax: '{PREFIX}embed {ARGUMENTS}',
-    syntaxError: {['Incorrect Usage!']: 'Please use `{PREFIX}embed {ARGUMENTS}`'},
+    syntaxError: { ['Incorrect Usage!']: 'Please use `{PREFIX}embed {ARGUMENTS}`' },
 
     permissions: ['ADMINISTRATOR'],
 
@@ -20,7 +20,7 @@ export default {
         const json = JSON.parse(text)
 
         const embed = new MessageEmbed(json)
-        
+
         return embed
     },
 } as ICommand

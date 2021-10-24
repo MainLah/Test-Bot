@@ -9,8 +9,8 @@ export default {
     slash: false,
     testOnly: true,
 
-    callback: ({}) => {
-        const gayrate = Math.floor(Math.random()*101)
+    callback: ({ }) => {
+        const gayrate = Math.floor(Math.random() * 101)
 
         const embed = new MessageEmbed()
             .setColor('RED')
@@ -21,14 +21,14 @@ export default {
         return embed
     },
 
-    error: ({ error, command, message, info}) => {
+    error: ({ error, command, message, info }) => {
         if (error === CommandErrors.COMMAND_DISABLED) {
-            const embed = new MessageEmbed()        
-            .setTitle('Command disabled')        
-            .setColor(0xff0000)      
-            
-            message.reply({        
-                embeds: [embed] 
+            const embed = new MessageEmbed()
+                .setTitle('Command disabled')
+                .setColor(0xff0000)
+
+            message.reply({
+                embeds: [embed]
             })
         }
     }

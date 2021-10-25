@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^13.1.0",
+    "node-fetch": "^3.0.0",
     "wokcommands": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^3.0.3"
   }
 }

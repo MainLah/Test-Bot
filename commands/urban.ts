@@ -1,22 +1,26 @@
 import { ICommand } from "wokcommands";
+import fetch from "node-fetch";
 
 export default {
     category: "Fun",
     description: "Searches for a term on Urban Dictionary",
 
-    expectedArgs: '<term>',
+    slash: false,
+    testOnly: true,
+
+    expectedArgs: '<"term">',
     minArgs: 1,
-    maxArgs: 1,
+    maxArgs: 100,
 
-    callback: async ({ channel, args}) => {
+    callback: async ({ channel, args }) => {
         if (!args[0]) return ("Please provide a term to search for.");
+        const term = args[0];
+        const query = new URLSearchParams({ term });
+        const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
 
-        const res = await fetch(`https://api.urbandictionary.com/v0/define?term=${encodeURIComponent(args.join(" "))}`);
-        const json = await res.json();
+        if (!list.length) return (`No results found for **${term}**.`);
 
-        if (!json.list.length) return ("No results found.");
-
-        const result = json.list[0];
+        const result = list[0];
 
         return (`**${result.word}**\n${result.definition}\n\n**Example:**\n${result.example}`);
     }

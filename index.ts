@@ -2,6 +2,7 @@ import DiscordJS, { Intents } from 'discord.js'
 import WOKCommands from 'wokcommands'
 import path from 'path'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 dotenv.config()
 
 const client = new DiscordJS.Client({

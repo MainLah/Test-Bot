@@ -20,7 +20,7 @@ client.on('ready', () => {
 
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'commands'),
-        typeScript: true,
+        typeScript: false,
         testServers: ['748300659442319411', '754696179375276032'],
         mongoUri: process.env.MONGO_URI,
     })

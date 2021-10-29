@@ -4,8 +4,6 @@
   "description": "Test Discord Bot",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc -w --skipLibCheck",
     "dev": "nodemon index.ts"
   },
   "author": "stopher991",
